@@ -61,10 +61,7 @@ d.rectangle([W/2-140, 329, W/2+140, 332], fill=BUTTER)
 center("New England-style lobster rolls.", serif(48), 352, CREAM)
 center("Gulf Coast heart.", serif(48), 412, BUTTER)
 
-# buoy + awards strip (on the brine band)
-bx, by = 130, 512
-d.ellipse([bx-26, by-26, bx+26, by+26], outline=BUTTER, width=9)
-d.ellipse([bx-9, by-9, bx+9, by+9], fill=BAY)
+# awards strip (on the brine band) — no buoy: it collided with the centered strip
 center("Best Food Truck 2024 + 2025 · WXXV VCA's   —   Sun Herald Best of Coastal Mississippi 2025", sans(23), 494, CREAM)
 center("Lobster Bisque  ·  Clam Chowder  ·  Bang Bang Tacos  ·  Queso Fries", sans(23), 530, TEAL if False else (122, 179, 170))
 center("Now serving at The Shoppes at Washington Avenue — 6835 Washington Ave, Ocean Springs, MS", sans(21), 572, SAND)

@@ -1,0 +1,107 @@
+[
+ {
+  "shot": "r_bisque-chowder_desktop.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "bisque-chowder_mobile.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "r_contact_desktop.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "contact_mobile.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Button label \"SEND MESSAGE\" touches left/right edges @ Send Message button"
+ },
+ {
+  "shot": "r_index_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Heading \"New England-style lobster rolls.\" is clipped @ Hero section\n- Text \"Best of Coastal Mississippi 2025\" is clipped @ Awards banner\n- Text \"The Scout Guide Mississippi Gulf Coast\" is clipped @ Awards banner"
+ },
+ {
+  "shot": "index_mobile.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Text clipped @ \"GET DIRECTIONS\" button\n- Text clipped @ \"SEE THE MENU\" button"
+ },
+ {
+  "shot": "r_lobster-rolls_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Button label \"CONTACT US\" touches right edge of button @ Nav bar\n- Button label \"COME GET ONE\" touches right edge of button @ \"Not a lobster person? No problem.\" section"
+ },
+ {
+  "shot": "lobster-rolls_mobile.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "r_menu_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Text clipped: \"Lobster tossed with mayonnaise, served chilled, North Atlantic style.\" is clipped @ Maine Roll description\n- Text clipped: \"Warm crawfish with Cajun garlic butter \u2014 the one that made our name on the Coast.\" is clipped @ Bayou Roll description\n- Text clipped: \"Fried, to order \u2014 pick your catch.\" is clipped @ Grouper or Crawfish Tail Baskets description"
+ },
+ {
+  "shot": "menu_mobile.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Button label touches edges @ \"PLAN YOUR VISIT\" button\n- Button label touches edges @ \"GET DIRECTIONS\" button"
+ },
+ {
+  "shot": "r_notfound_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Button label touches edges @ \"CONTACT US\" button in nav bar"
+ },
+ {
+  "shot": "notfound_mobile.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "r_our-story_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Button label touches edges @ \"VISIT THE FIRST ONE\" button\n- Footer columns ragged at baseline @ footer, right column"
+ },
+ {
+  "shot": "our-story_mobile.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "r_privacy_desktop.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "privacy_mobile.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Heading \"Privacy Po\" cut off @ Privacy Policy heading"
+ },
+ {
+  "shot": "r_thanks_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Nav bar item spacing is uneven @ header\n- Button label \"CONTACT US\" touches right edge @ header nav\n- Footer columns are ragged at baseline @ footer"
+ },
+ {
+  "shot": "thanks_mobile.png",
+  "verdict": "CLEAN",
+  "text": "VERDICT: CLEAN"
+ },
+ {
+  "shot": "r_visit_desktop.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Heading \"Our new home is The Shoppes at Washin\" is clipped @ Hero section\n- Button label \"GET DIRECTIONS\" touches its left and right edges @ Hero section\n- Button label \"ASK US ANYTHING\" touches its left and right edges @ Hero section"
+ },
+ {
+  "shot": "visit_mobile.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Map area failed to paint @ middle of page\n- Button label touches edges (\"GET DIRECTIONS\", \"ASK US ANYTHING\", \"WHAT WE SERVE\") @ middle of page"
+ },
+ {
+  "shot": "og.png",
+  "verdict": "DEFECTS",
+  "text": "VERDICT: DEFECTS\n- Text \"Best\" clipped by circle @ \"Best Food Truck\" award\n- Text \"MISSISSIPPI GULF COAST\" is slightly cut off on the right side of the viewport."
+ }
+]
