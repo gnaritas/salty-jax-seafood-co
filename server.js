@@ -51,18 +51,20 @@ const server = http.createServer((req, res) => {
 
   if (p === '/healthz') return serve(res, 200, 'ok', 'text/plain');
 
-  if (p === '/open') {
-    const q = (req.url || '').split('?')[1] || '';
-    const slug = process.env.SITE_SLUG || 'salty-jax-seafood-co';
-    const who = q.split('&').map((s) => s.split('=')).filter((kv) => kv[0] === 's').map((kv) => kv[1])[0];
-    const src = who && /^[a-z0-9-]{1,40}$/.test(who) ? who : slug;
-    console.log('OPEN ' + src + ' @' + (process.env.TZ || '?') + ' ' + new Date().toISOString());
+  if (p === '/open' && (req.method === 'GET' || req.method === 'HEAD')) {
+    const q = new URLSearchParams((req.url || '').split('?')[1] || '');
+    console.log('OPEN ' + SITE + ' ' + JSON.stringify({ t: (q.get('t') || '').slice(0, 120), ua: (req.headers['user-agent'] || '').slice(0, 60), ts: new Date().toISOString() }));
     res.writeHead(200, {
       'Content-Type': 'image/gif',
       'Cache-Control': 'no-store, no-cache, must-revalidate',
       'X-Robots-Tag': 'noindex, nofollow',
     });
     return res.end(PIXEL);
+  }
+
+  if ((req.url || '').indexOf('utm_') !== -1) {
+    const q = new URLSearchParams((req.url || '').split('?')[1] || '');
+    console.log('CLICK ' + SITE + ' ' + JSON.stringify({ c: (q.get('utm_content') || '').slice(0, 120), path: p.slice(0, 100), ua: (req.headers['user-agent'] || '').slice(0, 60), ts: new Date().toISOString() }));
   }
 
   if (p === '/contact' && req.method === 'POST') {
@@ -81,6 +83,7 @@ const server = http.createServer((req, res) => {
       const text = `New message from the Salty Jax Seafood Co. site:\n\nName: ${name}\nPhone: ${phone || '-'}\nEmail: ${email || '-'}\n\n${msg || '(no message body)'}\n`;
       const html = `<h2>New message from the Salty Jax Seafood Co. site</h2><p><b>Name:</b> ${escapeHtml(name)}<br><b>Phone:</b> ${escapeHtml(phone || '-')}<br><b>Email:</b> ${escapeHtml(email || '-')}</p><p>${escapeHtml(msg || '(no message body)').replace(/\n/g, '<br>')}</p>`;
       const deliver = () => {
+        console.log('CONTACT ' + SITE + ' ' + JSON.stringify({ name, phone, email, message: msg.slice(0, 200), t: new Date().toISOString() }));
         console.log('MAILSENT ' + subject);
         res.writeHead(303, { Location: '/thanks' });
         res.end();
@@ -88,7 +91,7 @@ const server = http.createServer((req, res) => {
       const fail = (err2) => {
         console.error('MAILERR ' + err2);
         res.writeHead(502, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Try again</title><meta name="robots" content="noindex"></head><body><h1>We could not send that right now</h1><p>Please try again in a moment, or use the form again when we open.</p><p><a href="/contact">Back to the form</a></p></body></html>');
+        res.end('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Try again</title><meta name="robots" content="noindex"></head><body><h1>We could not send that right now</h1><p>Please try again in a moment, or call (570) 261-4180.</p><p><a href="/contact">Back to the form</a></p></body></html>');
       };
       if (!key) return fail('BREVO_API_KEY not set');
       fetch('https://api.brevo.com/v3/smtp/email', {
@@ -97,7 +100,7 @@ const server = http.createServer((req, res) => {
         body: JSON.stringify({
           sender: { name: SITE + ' site', email: LANE_INBOX },
           to: [{ email: LANE_INBOX }],
-          replyTo: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) ? { email, name } : undefined,
+          replyTo: /^[^\s@]+@[^@\s]+\.[^@\s]{2,}$/.test(email) ? { email, name } : undefined,
           subject,
           textContent: text,
           htmlContent: html,

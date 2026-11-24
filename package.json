@@ -1,0 +1,9 @@
+{
+  "name": "salty-jax-seafood-co",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salty Jax Seafood Co. (6835 Washington Ave, Ocean Springs MS 39564) — Gulf-coast seafood restaurant site (websites lane)",
+  "main": "server.js",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js" }
+}
