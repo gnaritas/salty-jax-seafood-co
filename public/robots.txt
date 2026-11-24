@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salty-jax-seafood-co-demo.up.railway.app/sitemap.xml
